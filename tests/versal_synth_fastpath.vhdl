@@ -294,9 +294,9 @@ begin
 
 --- Variant 4: describing addition symbolically relying on syntheziser inference  ---
 
--- Result: Not working, synth does not use fastpath (actually result is totally strange and imho rather inefficient)
+-- Result: Working properly when word-size is above threshold value (>= 9 bits (basically when more than one slice is needed)), for smaller sizes not working (result rather strange)
 
-   -- dont really get what synth produes here, it seems highly un optimized
+   -- for very small sizes I dont really get what synth produes here, it seems highly un optimized
    sum_v4 <= std_logic_vector(signed(a) + signed(b));
 
 
